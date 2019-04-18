@@ -1,0 +1,26 @@
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.nav-links .link{
+    color: #F1FFFA;
+    margin: .25em;
+}
+
+
+.navbar-wrapper {
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: #65B88E;
+}
+
+.navbar-wrapper .title{
+    color: #F1FFFA;
+    margin: .25em;
+    text-overflow: ellipsis; /* These commands stop from wrapping */
+    white-space: nowrap;
+}
