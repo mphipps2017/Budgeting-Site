@@ -7,20 +7,22 @@
 
 .nav-links .link{
     color: #F1FFFA;
-    margin: .25em;
+    margin: .5em;
+    font-size: 1.1em;
 }
-
 
 .navbar-wrapper {
     display:flex;
     flex-direction: row;
-    width: 100%;
+    height: 3em;
     background-color: #65B88E;
 }
 
 .navbar-wrapper .title{
     color: #F1FFFA;
     margin: .25em;
-    text-overflow: ellipsis; /* These commands stop from wrapping */
+    font-size: 2em;
+    /* These commands stop from wrapping */
+    text-overflow: ellipsis;
     white-space: nowrap;
 }

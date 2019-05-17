@@ -7,6 +7,9 @@ const Navbar = (props) => {
         <nav className="navbar-wrapper">
         <div className="title">Budget Site</div>
             <div className="nav-links">
+            <Link style={{textDecoration:'none'}} to='/signin'>
+                    <div className="link">Sign In</div>
+                </Link>
                 <Link style={{textDecoration:'none'}} to='/'>
                     <div className="link">Dashboard</div>
                 </Link>
