@@ -4,6 +4,13 @@ const usersModel = require('../models/users.js');
 const router = express.Router();
 
 //Grab a User's document (based on document ID)
+router.get('/user', (req, res, next) => {
+  usersModel.get(req.params.id, (err, value) => {
+    if (err) return next(err);
+    res.json(value);
+  });
+});
+
 router.get('/:id', (req, res, next) => {
   usersModel.get(req.params.id, (err, value) => {
     if (err) return next(err);
@@ -12,12 +19,11 @@ router.get('/:id', (req, res, next) => {
 });
   
 //Create a new User
-router.post('/user', (req, res) => {
+router.post('/', (req, res) => {
   usersModel.new(req.query, (err) => { // req.query gives the body of the post request
     if (err) return next(err);
     res.json({ success: true });
   });
-
   res.send(req.query);
 });
 

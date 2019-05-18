@@ -8,7 +8,7 @@ module.exports = {
 
   //Connects to the mongo port: 27017
   connectToServer(callback) {
-    MongoClient.connect(DB_URL, (err, client) => {
+    MongoClient.connect(DB_URL, {useNewUrlParser: true},(err, client) => {
       if (err) {
         console.log(err);
         process.exit(1);

@@ -7,13 +7,13 @@ const collectionName = 'users';
 
 //Inserts new User into the users collection
 exports.new = (data, callback) => {
-  console.log(data);
   mongo.getDb().collection(collectionName).insertOne({
     username: data.username,
     password: data.password,
     name: data.name,
     currentBudget: undefined,
-    allBudgets: [],
+    budgets: [],
+    spending: [],
   }, function(err, res) {
     if (err) throw err;
   });
