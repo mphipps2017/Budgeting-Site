@@ -19,12 +19,14 @@ exports.new = (data, callback) => {
   });
 };
 
+//Grabs the document with the given ID from the collection
 exports.get = (id, callback) => {
   mongo.getDb().collection(collectionName).findOne({ _id: ObjectId(id) }, (err, result) => {
     callback(err, result);
   });
 };
 
+//Sets password of the document with given ID
 exports.update = (id, data, callback) => {
     mongo.getDb().collection(collectionName).updateOne({ _id: ObjectId(id) }, {$set:{
     password: data.password,

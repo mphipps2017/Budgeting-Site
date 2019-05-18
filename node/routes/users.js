@@ -27,6 +27,7 @@ router.post('/', (req, res) => {
   res.send(req.query);
 });
 
+//Handles put request for changing password
 router.put('/:id', (req, res, next) => {
   userModel.update(req.params.id, req.query, (err) => {
     if (err) return next(err);
