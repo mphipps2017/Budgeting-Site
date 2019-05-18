@@ -20,16 +20,16 @@ router.get('/:id', (req, res, next) => {
   
 //Create a new User
 router.post('/', (req, res) => {
-  userModel.new(req.query, (err) => { // req.query gives the body of the post request
+  userModel.new(req.body, (err) => {
     if (err) return next(err);
     res.json({ success: true });
   });
-  res.send(req.query);
+  res.send(req.body);
 });
 
 //Handles put request for changing password
 router.put('/:id', (req, res, next) => {
-  userModel.update(req.params.id, req.query, (err) => {
+  userModel.update(req.params.id, req.body, (err) => {
     if (err) return next(err);
     res.json({ success: true });
   });

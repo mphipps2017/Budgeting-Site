@@ -5,11 +5,11 @@ const router = express.Router();
   
 //Create a new Spending Year for a given user
 router.post('/', (req, res) => {
-  spendingModel.new(req.query, (err) => {
+  spendingModel.new(req.body, (err) => {
     if (err) return next(err);
     res.json({ success: true });
   });
-  res.send(req.query);
+  res.send(req.body);
 });
 
 //Get a spending year by it's document ID
