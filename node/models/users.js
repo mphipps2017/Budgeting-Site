@@ -24,3 +24,11 @@ exports.get = (id, callback) => {
     callback(err, result);
   });
 };
+
+exports.update = (id, data, callback) => {
+    mongo.getDb().collection(collectionName).updateOne({ _id: ObjectId(id) }, {$set:{
+    password: data.password,
+  }}, (err) => {
+    callback(err);
+  });
+};
