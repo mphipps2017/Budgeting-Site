@@ -9,14 +9,15 @@ exports.new = (data, callback) => {
     mongo.getDb().collection(collectionName).insertOne({
         userID: data.id,
         year: data.year,
-        months: {}, //edit this to include the object as definned in my project plans
+        months: [], //edit this to include the object as definned in my project plans
     }, function(err, res) {
         if (err) throw err;
     });
 };
 
+//Returns a spending object with the given ID
 exports.get = (id, callback) => {
     mongo.getDb().collection(collectionName).findOne({ _id: ObjectId(id) }, (err, result) => {
-      callback(err, result);
+        callback(err, result);
     });
-  };
+};

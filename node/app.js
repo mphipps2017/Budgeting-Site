@@ -2,8 +2,7 @@
 const express = require('express');
 const app = express();
 const mongo = require('./helpers/mongoUtil.js');
-const bodyParser = require('body-parser');
-var db;
+const bodyParser = require('body-parser'); // Used for accessing the body of requests
 
 //The body parser is used for parsing JSON data
 app.use(bodyParser.json());
